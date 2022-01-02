@@ -13,6 +13,7 @@ export default function CandidatesPage(props) {
             const response = await axios.get('https://jsonplaceholder.typicode.com/users');
             setData(response.data);
         }
+        
         fetchData();
     }, [])
     return (
