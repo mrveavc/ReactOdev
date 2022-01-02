@@ -1,6 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import './App.css';
-import React from 'react';
+import React ,{ Component } from 'react';
 import { HomePage } from "./components/HomePage";
 import { createBrowserHistory } from 'history';
 import {
@@ -16,15 +15,16 @@ import DetailPage from './components/DetailPage';
 
 const history = createBrowserHistory();
 
-class App extends React.Component {
-
+class App extends Component {
+state = {
+      data:[]
+    }
   handlePageChange = (activePage, repo) => {
     history.push(activePage);
-    // this.data(repo);
+    this.setState({ data: repo })
+    
   }
-  //   data = (repo) => {
-  //  console.log(repo.name)    
-  //   }
+
   renderNavMenu = () => {
 
     const { home } = routes;
@@ -58,13 +58,13 @@ class App extends React.Component {
             <HomePage handlePageChange={this.handlePageChange} />
           </Route>
           <Route exact path={candidates.path}>
-            <CandidatesPage data={this.repo} handlePageChange={this.handlePageChange} />
+            <CandidatesPage  handlePageChange={this.handlePageChange} />
           </Route>
           <Route exact path={aboutUs.path}>
             <AboutUsPage handlePageChange={this.handlePageChange} />
           </Route>
-          <Route exact path={detailPage.path}>
-            <DetailPage handlePageChange={this.handlePageChange} />
+          <Route exact  path={detailPage.path}>
+            <DetailPage parentState={this.state.data} handlePageChange={this.handlePageChange} />
           </Route>
 
         </Router>

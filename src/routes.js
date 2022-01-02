@@ -14,13 +14,5 @@ export const routes = {
     detailPage: {
         path: "/detailPage",
         title: "detailPage"
-    },
-    // settings: {
-    //     path: "/settings",
-    //     title: "Settings"
-    // },
-    // maps: {
-    //     path: "/maps",
-    //     title: "Maps"
-    // },
+    }
 }
