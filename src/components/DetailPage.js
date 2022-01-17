@@ -6,6 +6,7 @@ class DetailPage extends Component {
             <div>
                 <h1>Detail</h1>
                 <table id="tablo">
+                <tbody>
                     <tr>
                         <th>Ad</th>
                         <th>Soyad</th>
@@ -13,6 +14,8 @@ class DetailPage extends Component {
                         <th>Email</th>
                         <th>Website</th>
                     </tr>
+                    </tbody>
+                    <tbody>
                     <tr>
                         <td> {this.props.parentState.name}</td>
                         <td> {this.props.parentState.username}</td>
@@ -21,6 +24,8 @@ class DetailPage extends Component {
                         <td> {this.props.parentState.website}</td>
                         
                     </tr>
+                    </tbody>
+
                 </table>
             </div>
         )
